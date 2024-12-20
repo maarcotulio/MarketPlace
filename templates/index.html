@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  {% if err == 1 %}
+  <div class="error">
+      <h3 class="text" >Not enough founds</h3>
+  </div>
+  {% elif err == 2 %}
+  <div class="error">
+    <h3 class="text" >Bought!</h3>
+  </div>
+  {% endif %}
+  <br>
+  <div class="menus" >
+    <span class="cash">Actual Cash: ${{ "%.2f"|format(money[0]["cash"]) }}</span>
+    <div class="cardSale">
+      <div class="container-index">
+          <ul class="carousel">
+          {% for item in table %}
+              <li class="item">
+                <a href="/product/{{ item.id }}">
+                  <img src="{{ item.img }}" alt="Product" class="img-container">
+                </a>
+              </li>
+          {% endfor %}
+          </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

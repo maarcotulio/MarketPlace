@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <div class="container-sale">
+       <div class="container-inline">
+            {% for item in table %}
+                <div class="block">
+                    <img src="{{ item.img }}" alt="Product">
+                </div>
+
+                <div class="sblock">
+                    <span id="saleBlock2"> {{ item.title }} </span>
+                    <p class="saleBlock2Down"> {{ item.big }} </p>
+                </div>
+
+                <div class="tblock">
+                    <div class="blockPriceBtn">
+                        <p style="font-weight: bold;">
+                            Price: ${{ "%.2f"|format(item.price) }}
+                        </p>
+                        <form action="/buy/{{item.id}}" method="post">
+                            <button class="btn btn-primary saleBUTTON" name="button" type="submit" value="{{ item.price }}" >Buy</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+       </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainIcon {
+    padding-left: 30px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.form-control {
+    max-width: 500px;
+    width: 100%;
+}
+
+.login {
+    background-color: aliceblue;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    border-radius: 4%;
+}
+
+.divForm {
+    margin-right: -32px;
+}
+
+.err {
+    background: #ffe6ee;
+    border: 1px solid #b1395f;
+}
+
+#errMsg, #errMsgPass, #errMsgEmail, #errMsgImg, #errMsgTitle{
+    font-family: Cambraia;
+    color: #c12020;
+    font-weight: bold;
+    position: relative;
+}
+
+.text {
+    font-family: Cambraia;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.error {
+    background-color: aliceblue;
+    height: 100px;
+    width: 100vw;
+}
+
+.card {
+    background-color: aliceblue;
+}
+
+#inputEmail3, #inputPassword3, #inputEmail, #inputImg, #inputTitle, #inputQuant {
+    width: 600px;
+
+}
+
+.menus {
+    background-color: aliceblue;
+    width: 100%;
+    max-width: 1400px;
+    height: 800px;
+    border-radius: 5px;
+    padding-top: 40px;
+    padding-left: 80px;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    cursor: pointer;
+}
+.cardSale {
+    margin: auto;
+    height: 90%;
+    padding-top: 75px;
+    display: flex;
+    column-gap: 25px;
+    overflow-y: scroll;
+}
+
+.card-img-top {
+    background-color: aliceblue;
+}
+
+.price {
+    font-size: large;
+}
+
+.dolar {
+    font-size: small;
+    padding-bottom: 10px;
+}
+
+.container {
+    background-color: aliceblue;
+    width: 1400px;
+    height: 800px;
+    border-radius: 5px;
+    padding-top: 0px;
+    padding-left: 80px;
+    top: 40px;
+    margin: auto;
+}
+
+.saleBUTTON {
+    width: 200px;
+    height: 40px;
+}
+
+.imageLay {
+    width: 10px;
+    height: 10px;
+    padding-top: 10px;
+}
+
+#saleBlock2 {
+    font-family: Cambraia;
+    font-size: xx-large;
+    font-weight: bold;
+    width: auto;
+    display: inline;
+}
+
+#saleBlock2Down {
+    width:100%;
+    height: auto;
+    font-size:1vw;
+    padding-left: 10px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon  {
+    background-color: black;
+    font-weight: bold;
+}
+
+.carousel {
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
+}
+
+.carousel .item {
+    scroll-snap-align: start;
+    display: inline-block;
+    column-gap: 10px;
+}
+
+.img-container {
+    width: 200px;
+    height: 300px;
+    padding-top: 10px;
+}
+
+.space {
+    height: 50px;
+}
+
+.container-sale {
+    background-color: aliceblue;
+    max-width: 1600px;
+    width: 100%;
+    height: 800px;
+    border-radius: 5px;
+    padding-top: 40px;
+    padding-left: 80px;
+    margin: auto;
+    overflow: auto;
+}
+
+.block {
+    position: relative;
+    height: 500px;
+    width: 400px;
+    border-radius: 10px;
+    top: 80px;
+}
+
+.block img {
+    height: 500px;
+    overflow: auto;
+}
+.sblock {
+    overflow: auto;
+    height: 600px;
+    width: 750px;
+    border-radius: 10px;
+    position: relative;
+    top: 80px;
+    display: inline;
+    word-wrap: break-word;
+}
+
+
+.tblock {
+    height: 30vw;
+    width: 250px;
+    position: relative;
+    top: 80px;
+    padding-top: 10px;
+    border-radius: 10px;
+}
+
+
+.container-inline {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    column-gap: 10px;
+    padding: 16px;
+}
+
+.cash{
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .container-sale {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .block {
+        margin-bottom: 16px;
+    }
+
+    .sblock {
+        width: 100%;
+    }
+
+    .container-inline {
+        flex-direction: column;
+    }
+
+    .tblock {
+        margin-top: 16px;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        padding-bottom: 16px;
+        
+    }
+
+    .blockPriceBtn {
+        display: flex;
+        flex-direction: column;
+    }
+}

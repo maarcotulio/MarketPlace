@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    {% if err == 1 %}
+        <div class="error">
+            <h3 class="text" >This product you already posted</h3>
+        </div>
+    {% endif %}
+
+    <div class="form">
+        <form action="/sale" method="post" onsubmit="return check()" novalidate>
+            <div class="login">
+                <div class="row mb-3">
+                    
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputTitle" name="title" placeholder="Title" required>
+                        <div id="errMsgTitle"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail" name="big" placeholder="Long Description" required>
+                        <div id="errMsgEmail"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputPassword3" step="0.01" name="price" placeholder="Price" required>
+                        <div id="errMsgPass"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputQuant" name="quantity" placeholder="Quantity" required>
+                        <div id="errMsgQuant"></div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputImg" name="image" placeholder="Url" required>
+                        <div id="errMsgImg"></div>
+                    </div>
+                    </div>
+
+                <div class="button">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function check () {
+        // (C0) INIT
+        var valid = true, error = "", field = "";
+
+        // (C1) TITLE
+        field = document.getElementById("inputTitle");
+        error = document.getElementById("errMsgTitle");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Title can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C2) PRICE
+        field = document.getElementById("inputPassword3");
+        error = document.getElementById("errMsgPass");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Price can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C3) QUANTITY
+        field = document.getElementById("inputQuant");
+        error = document.getElementById("errMsgQuant");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Quantity can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C4) LONG DESCRIPTION
+        field = document.getElementById("inputEmail");
+        error = document.getElementById("errMsgEmail");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Long description can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C5) IMAGE
+        field = document.getElementById("inputImg");
+        error = document.getElementById("errMsgImg");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Image can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C6) RESULT
+        return valid;
+        }
+
+    </script>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    {% if err == 1 %}
+        <div class="error">
+            <h3 class="text" >This Username is already in use</h3>
+        </div>
+    {% endif %}
+
+    <div class="form">
+        <form action="/register" method="post" onsubmit="return check()" novalidate>
+            <div class="login">
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" name="user" placeholder="Username" required>
+                        <div id="errMsg"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="example@gmail.com" required>
+                        <div id="errMsgEmail"></div>
+                </div>
+                </div>
+
+                <div class="row mb-3">
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password" required>
+                    <div id="errMsgPass"></div>
+                </div>
+                </div>
+
+                <div class="button">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function check () {
+        // (C1) INIT
+        var valid = true, error = "", field = "";
+
+        // (C2) NAME
+        field = document.getElementById("inputEmail3");
+        error = document.getElementById("errMsg");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Username can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C3) NUMBER
+        field = document.getElementById("inputPassword3");
+        error = document.getElementById("errMsgPass");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Password can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C4) EMAIL
+        field = document.getElementById("inputEmail");
+        error = document.getElementById("errMsgEmail");
+        if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "<img src=\"static/exclamation.png\" type=\"static/png\" alt=\"Error icon\" height=\"14px\" > Email can't be empty\r\n";
+        } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+        }
+
+        // (C5) RESULT
+        return valid;
+        }
+
+    </script>
+{% endblock %}
